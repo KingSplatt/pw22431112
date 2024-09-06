@@ -8,6 +8,24 @@ body{
 header nav ol{
     text-align: center;
 }
+
+footer{
+    background: #303cec;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px black;
+    width: 50%;
+    margin: 0px auto;
+}
+
+header img{
+    border-radius: 500px;
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+}
 header nav ol li{
     background: blue;
     border: 1px solid #303cec;
@@ -15,9 +33,25 @@ header nav ol li{
     color: white;
     padding: 10px 26px;
     margin-right: 25px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px black;
+    cursor: pointer;
 }
 header nav ol li:hover{
     background: #222225;
     transition: 1s;
     transition-duration: 1s;
+    box-shadow: 0px 0px 0px black;
+}
+
+
+
+main section article{
+    /* border: 1px solid #e62020; */
+    width: 32.9%;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px black;
+    display: inline-block;
 }
