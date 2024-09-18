@@ -1,0 +1,117 @@
+article{
+    border-radius: 5px;
+    height: 50px;
+    margin-top: 10px;
+    width: 150px;
+    text-align: center;
+}
+
+#uno{
+    /* Si no soporta gradientes */
+    background: red;
+    /* Opera */
+    background: -o-linear-gradient(rgba(255, 0, 0, 1), rgba(255, 255, 0, 1),blue);
+    /* Webkit (Chrome, Safari) */
+    background: -webkit-linear-gradient(rgba(255, 0, 0, 1), rgba(255, 255, 0, 1),blue);
+    /* Mozilla (Firefox) */
+    background: -moz-linear-gradient(rgba(255, 0, 0, 1), rgba(255, 255, 0, 1),blue);
+    /* Internet Explorer */
+    background: -ms-linear-gradient(rgba(255, 0, 0, 1), rgba(255, 255, 0, 1),blue);
+    /* Estándar */
+    background: linear-gradient(rgba(255, 0, 0, 1), rgba(255, 255, 0, 1),blue);
+}
+
+#dos{
+    /* Si no soporta gradientes */
+    background: red;
+    /* Opera */
+    background: -o-linear-gradient(to left,red, yellow,blue);
+    /* Webkit (Chrome, Safari) */
+    background: -webkit-linear-gradient(to left,red, yellow,blue);
+    /* Mozilla (Firefox) */
+    background: -moz-linear-gradient(to left,red, yellow,blue);
+    /* Internet Explorer */
+    background: -ms-linear-gradient(to left,red, yellow,blue);
+    /* Estándar */
+    background: linear-gradient(to left,red, yellow,blue);
+}
+
+#tres{
+    /* Si no soporta gradientes */
+    background: red;
+    /* Opera */
+    background: -o-linear-gradient(to right,red, yellow,blue);
+    /* Webkit (Chrome, Safari) */
+    background: -webkit-linear-gradient(to right,red, yellow,blue);
+    /* Mozilla (Firefox) */
+    background: -moz-linear-gradient(to right,red, yellow,blue);
+    /* Internet Explorer */
+    background: -ms-linear-gradient(to right,red, yellow,blue);
+    /* Estándar */
+    background: linear-gradient(to right,red, yellow,blue);
+}
+
+#cuatro{
+    /* Si no soporta gradientes */
+    background: red;
+    /* Opera */
+    background: -o-linear-gradient(to right bottom,red, yellow,blue);
+    /* Webkit (Chrome, Safari) */
+    background: -webkit-linear-gradient(to right bottom,red, yellow,blue);
+    /* Mozilla (Firefox) */
+    background: -moz-linear-gradient(to right bottom,red, yellow,blue);
+    /* Internet Explorer */
+    background: -ms-linear-gradient(to right bottom,red, yellow,blue);
+    /* Estándar */
+    background: linear-gradient(to right bottom,red, yellow,blue);
+}
+
+#cinco{
+    /* Si no soporta gradientes */
+    background: red;
+    /* Opera */
+    background: -o-linear-gradient(to left bottom,red, yellow,blue);
+    /* Webkit (Chrome, Safari) */
+    background: -webkit-linear-gradient(to left bottom,red, yellow,blue);
+    /* Mozilla (Firefox) */
+    background: -moz-linear-gradient(to left bottom,red, yellow,blue);
+    /* Internet Explorer */
+    background: -ms-linear-gradient(to left bottom,red, yellow,blue);
+    /* Estándar */
+    background: linear-gradient(to left bottom,red, yellow,blue);
+}
+
+#seis{
+    /* Si no soporta gradientes */
+    background: red;
+    /* Opera */
+    background: -o-linear-gradient(-190deg,red, yellow,blue);
+    /* Webkit (Chrome, Safari) */
+    background: -webkit-linear-gradient(-190deg,red, yellow,blue);
+    /* Mozilla (Firefox) */
+    background: -moz-linear-gradient(-190deg,red, yellow,blue);
+    /* Internet Explorer */
+    background: -ms-linear-gradient(-190deg,red, yellow,blue);
+    /* Estándar */
+    background: linear-gradient(-190deg,red, yellow,blue);
+}
+
+#siete{
+    /* Si no soporta gradientes */
+    background: red;
+    /* Opera */
+    background: -o-repeating-linear-gradient(45deg,red, yellow,blue);
+    /* Webkit (Chrome, Safari) */
+    background: -webkit-repeating-linear-gradient(45deg,red, yellow,blue);
+    /* Mozilla (Firefox) */
+    background: -moz-repeating-linear-gradient(45deg,red, yellow,blue);
+    /* Internet Explorer */
+    background: -ms-repeating-linear-gradient(45deg,red, yellow,blue);
+    /* Estándar */
+    background: repeating-linear-gradient(45deg,red, yellow,blue, 2%);
+}
+
+.texto{
+    position: relative;
+    top: 15px;
+}
