@@ -1,0 +1,14 @@
+body{
+    font-size: 16px;
+    max-width: 1024px;
+    margin: 0px auto;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 8px 14px;
+    text-align: center;
+    width: 17.3%;
+    /* quita espacios entre cajas */
+    margin: 0px -4px;
+}
