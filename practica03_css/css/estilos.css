@@ -1,7 +1,37 @@
+html{
+    --color-verde: #849C3C;
+    --fondo-negro: #2c2c2c;
+    --colo-rojo: #D33040;
+    --color-gris: lightgray;
+    --color-negro: #353535;
+    --color-linea: #949494;
+    --color-azul:lightblue;
+    --color-blanco: white;
+}
+
 body{
     font-size: 16px;
     max-width: 1024px;
     margin: 0px auto;
+}
+
+footer article{
+    width: 30.9%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+
+footer img{
+    width: 300px;
+}
+
+header input{
+    text-align: right;
+}
+
+header nav ul{
+    margin-left: -40px;
 }
 
 header nav ul li{
@@ -11,4 +41,89 @@ header nav ul li{
     width: 17.3%;
     /* quita espacios entre cajas */
     margin: 0px -4px;
+}
+
+header nav ul li:nth-child(2){
+    background: var(--color-verde);
+}
+
+header nav ul li:nth-child(3){
+    background: var(--color-negro);
+}
+
+header nav ul li:nth-child(4){
+    background: var(--colo-rojo);
+}
+
+header nav ul li:nth-child(5){
+    background: var(--color-gris);
+}
+
+hr{
+    border-style: dashed;
+    color: var(--color-linea);
+}
+
+section,footer{
+    background: var(--fondo-negro);
+    padding-bottom: 20px;
+}
+
+section article{
+    display: inline-block;
+    padding: 18px 8px;
+    width: 18.5%;
+    height: 280px;
+    margin: 0px -4px;
+    vertical-align: top; /*esto hace que las sections o cajas se vayan hasta arriba */
+}
+
+section article ul{
+    list-style: none;
+}
+
+section article:nth-child(2){
+    background: var(--color-verde);
+}
+
+section article:nth-child(3){
+    background: var(--color-negro);
+}
+
+section article:nth-child(4){
+    background: var(--colo-rojo);
+}
+
+section article:nth-child(5){
+    background: var(--color-linea);
+}
+
+section img{
+    width: 150px;
+}
+
+
+
+.letra-gris{
+    color: var(--color-gris);
+}
+
+.letra-azul{
+    color: var(--color-azul)
+}
+
+.letra-blanca{
+    color: var(--color-blanco);
+}
+
+.read-more{
+    margin-left: 220px;
+}
+
+.tam-menu-lateral{
+    font-size: 1.1em;
+}
+
+.tam-tarjetas{
+    font-size: 1.7em;
 }
