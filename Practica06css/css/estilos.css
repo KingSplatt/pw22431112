@@ -151,6 +151,10 @@ body {
     padding: 0;
 }
 
+.footer article ul li {
+    color: #d6cfcf;
+}
+
 .footer article img {
     width: 40px;
 }
