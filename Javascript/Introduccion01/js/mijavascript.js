@@ -58,5 +58,165 @@ console.log(Object.values(objeto));
 console.log(Object.entries(objeto));
 
 
-let nombre = prompt("Ingrese su nombre", "Juan");
-alert("Hola " + nombre);
+// let nombre = prompt("Ingrese su nombre", "Juan");
+// alert("Hola " + nombre);
+
+//otra clase
+let variable = "valor";
+const CONSTANTE = "VALOR";
+function miFunction(a = 2) { //valor por defecto
+    return 2 * a;
+}
+console.log(miFunction(6));
+//funcion flecha
+const funcionFlecha = (a = 10) => {
+    return 2 * a;
+}
+console.log(funcionFlecha(4));
+
+//Destructiring - destructurar
+//Objetos
+const usuarios = {
+    nombre: "Martin",
+    apellido: "Nevarez"
+};
+
+// let nombre = usuarios.nombre;
+// let apellido = usuarios.apellido;
+let { nombre, apellido } = usuarios;
+console.log(nombre + " " + apellido);
+
+//Otro objeto
+const usuarios2 = {
+    nombre: "Martin",
+    apellido: "Nevarez",
+    redes: {
+        sociales: {
+            facebook: "martin.nevarez",
+            twitter: "martin_nevarez"
+        }
+    }
+};
+
+const face = usuarios2.redes.sociales.facebook;
+const { twitter } = usuarios2.redes.sociales;
+console.log(face, twitter);
+
+const { redes: { sociales: { facebook } } } = usuarios2;
+console.log(facebook);
+
+//Arreglos
+
+const arregloNombres = ["Martin", "Juan", "Pedro"];
+// let nombre1 = arregloNombres[0];
+// let nombre2 = arregloNombres[1];
+const [nombre1, , nombre3] = arregloNombres;
+console.log(nombre1, nombre3);
+
+//combinaciones - objetos
+const usuarios3 = {
+    direccion: "conocida",
+    numerocasa: "300"
+}
+
+const nuevoObjeto = { usuarios2, usuarios3 };
+console.log(nuevoObjeto);
+const nuevoObjeto2 = { ...usuarios2, ...usuarios3 }; //con esto hago propagacion de objetos y se combinan
+console.log(nuevoObjeto2);
+
+//Spread Operator
+const arreglo1 = ["Martin", "Juan", "Pedro"];
+const arreglo2 = ["Carlos", "Maria", "Laura"];
+const arreglo3 = [...arreglo1, ...arreglo2];
+console.log(arreglo3);
+
+const otroNuevoArreglo = arreglo3.concat(arreglo1, arreglo2);
+console.log(otroNuevoArreglo);
+
+//forEach, for, map, reduce y filter para manejar arreglos
+// for (let i = 0; i < otroNuevoArreglo.length; i++) {
+//     console.log(otroNuevoArreglo[i]);
+// }
+
+otroNuevoArreglo.forEach(function (nombre) {
+    console.log(nombre);
+});
+
+// otroNuevoArreglo.forEach((elemento, i) => {
+//     console.log(elemento + " " + i);
+// });
+
+let numeros = [1, 2, 3, 4, 5];
+let suma = 0;
+numeros.forEach((numero) => {
+    suma += numero;
+});
+console.log(suma);
+
+//Map
+let precios = [20, 30, 40, 50];
+const conversion = 0.85;
+let preciosnuevos = precios.map((precio) => {
+    return precio * conversion;
+});
+console.log(preciosnuevos);
+
+//Filter
+let edades = [12, 20, 30, 40, 50];
+let mayores = edades.filter((edad) => {
+    return edad > 18;
+});
+console.log(mayores);
+
+//Reduce
+let sumaprecios = precios.reduce((suma, precio) => {
+    return suma + precio;
+}, 0);
+console.log(sumaprecios);
+
+//Clases
+class Animal {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+
+    habla() {
+        console.log(this.nombre + " hace un ruido");
+    }
+}
+
+//Herencia
+class Perro extends Animal {
+    habla() {
+        console.log(this.nombre + " ladra");
+    }
+}
+
+const perro = new Perro("Firulais");
+perro.habla();
+
+
+//Metodos estaticos
+class Calculadora {
+    static sumar(a, b) {
+        return a + b;
+    }
+}
+
+console.log(Calculadora.sumar(2, 3));
+
+//Promesas
+const promesa = new Promise((resolve, reject) => {
+    const exito = true;
+    if (exito) {
+        resolve("La operacion fue exitosa");
+    } else {
+        reject("Hubo un error");
+    }
+});
+
+promesa.then((mensaje) => {
+    console.log(mensaje);
+}).catch((error) => {
+    console.log(error);
+});
