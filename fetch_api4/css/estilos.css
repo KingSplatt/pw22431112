@@ -1,9 +1,20 @@
+html {
+    /* para que no tome en cuenta los bordes extra  */
+    box-sizing: border-box;
+}
+
 body {
     background-color: bisque;
     font-family: sans-serif;
     margin: 0 auto;
     font-size: 16px;
     width: 1024px;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 button {
@@ -13,16 +24,23 @@ button {
     padding: 10px 20px;
 }
 
+.lista-personas {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
 .tarjeta {
     border: 2px dashed gray;
+    border-radius: 10px;
     display: flex;
     flex-flow: column wrap;
     gap: 10px;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 20px;
-    width: 350px;
+    width: 100px;
     margin: 0px auto;
 }
 
