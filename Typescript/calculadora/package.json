@@ -5,6 +5,7 @@
   "scripts": {
     "ejecutar": "ts-node multiplicacion.ts",
     "calcula": "ts-node calculadora.ts",
+    "definiciones": "ts-node definiciones.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
