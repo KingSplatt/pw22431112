@@ -11,6 +11,10 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 //puesto para escuchar la peticion del frontend
 const puerto = 3001;
+app.get('/hola', (_req, res) => {
+    let fecha = new Date().toLocaleDateString();
+    res.send("mundo con la fecha " + fecha);
+});
 //encendemos el servidor
 app.listen(puerto, () => {
     console.log(`Servidor en ejecucion y escuchando en el puerto ${puerto}`);

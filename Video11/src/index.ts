@@ -14,7 +14,7 @@ const puerto = 3001;
 
 app.get('/hola', (_req, res) => { //Se declara "req", pero su valor no se lee nunca.
     let fecha = new Date().toLocaleDateString();
-    res.send("mundo con la fecha " + fecha)
+    res.send("mundo con la fecha " + fecha + "");
 })
 
 //encendemos el servidor
