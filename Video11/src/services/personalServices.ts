@@ -2,12 +2,11 @@ import mysql from 'mysql2/promise';
 import { Personal, PersonalNuevo } from '../typesPersonal';
 
 const conexion = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    database: "pw2024m",
-    password: "root",
-    port: 3306
-})
+    host: '127.0.0.1',
+    user: 'splatt',
+    password: 'splatt123',
+    database: 'pw2024m'
+});
 
 export const obtienePersonal = async () => {
     try {

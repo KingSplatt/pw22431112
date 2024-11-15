@@ -7,6 +7,7 @@ const router = express.Router();
 router.get('/', async (_req: Request, res: Response) => {
     let personal = await personalServices.obtienePersonal();
     res.send(personal);
+    console.log("holaaaaa");
 })
 
 //htpp://localhost:3001/api/personal/1 <--- numero de id del personal
