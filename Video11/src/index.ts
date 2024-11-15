@@ -6,16 +6,22 @@ import express from 'express';
 
 const app = express();
 
+//Configurar rutas para el acceso personal
+import personalRutas from './routes/personalRutas';
+
 //todo lo que se regresa al usuario es tipo JSON
 app.use(express.json());
 
 //puesto para escuchar la peticion del frontend
-const puerto = 3001;
+const puerto = 3001
+    ;
+//Activar 
+app.use('api/personal', personalRutas);
 
-app.get('/hola', (_req, res) => { //Se declara "req", pero su valor no se lee nunca.
-    let fecha = new Date().toLocaleDateString();
-    res.send("mundo con la fecha " + fecha + "");
-})
+// app.get('/hola', (_req, res) => { //Se declara "req", pero su valor no se lee nunca.
+//     let fecha = new Date().toLocaleDateString();
+//     res.send("mundo con la fecha " + fecha + "");
+// })
 
 //encendemos el servidor
 app.listen(puerto, () => {
