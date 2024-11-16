@@ -1,5 +1,6 @@
 import mysql from 'mysql2/promise';
 import { Personal, PersonalNuevo } from '../typesPersonal';
+import { personalSchema, personalSchema2 } from '../schema/personal.schema';
 
 const conexion = mysql.createPool({
     host: '127.0.0.1',
@@ -28,6 +29,10 @@ export const encuentraPersonal = async (id: number) => {
 
 export const agregarPersonal = async (nuevo: PersonalNuevo) => {
     try {
+        const validacion = personalSchema.safeParse(nuevo);
+        if (!validacion.success) {
+            return { error: validacion.error };
+        }
         const [results] = await conexion.query("INSERT INTO personal (nombre, direccion, telefono, estatus) VALUES (?, ?, ?, ?)", [nuevo.nombre, nuevo.direccion, nuevo.telefono, nuevo.estatus]);
         return results;
     } catch (error) {
@@ -35,9 +40,13 @@ export const agregarPersonal = async (nuevo: PersonalNuevo) => {
     }
 }
 
-export const modificaPersonal = async (modificado: Personal) => {
+export const modificaPersonal = async (nuevo: Personal) => {
+    const validacion = personalSchema2.safeParse(nuevo);
+    if (!validacion.success) {
+        return { error: validacion.error };
+    }
     try {
-        const [results] = await conexion.query("UPDATE personal SET nombre = ?, direccion = ?, telefono = ?, estatus = ? WHERE id = ?", [modificado.nombre, modificado.direccion, modificado.telefono, modificado.estatus, modificado.id]);
+        const [results] = await conexion.query("UPDATE personal SET nombre = ?, direccion = ?, telefono = ?, estatus = ? WHERE id = ?", [nuevo.nombre, nuevo.direccion, nuevo.telefono, nuevo.estatus, nuevo.id]);
         return results;
     } catch (error) {
         return { error: "no se puede modificar el personal" };
