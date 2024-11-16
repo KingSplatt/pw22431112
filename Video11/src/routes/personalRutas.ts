@@ -17,6 +17,13 @@ router.get('/:id', async (req: Request, res: Response) => {
     res.send(personal);
 })
 
+//htpp://localhost:3001/api/personal/telefono/12134123 <--- numero de telefono del personal
+router.get('/telefono/:telefono', async (req: Request, res: Response) => {
+    // req.params.id
+    let personal = await personalServices.encuentraPersonalTelefono(req.params.telefono);
+    res.send(personal);
+})
+
 router.post('/', async (req: Request, res: Response) => {
     try {
         const { nombre, direccion, telefono, estatus } = req.body;

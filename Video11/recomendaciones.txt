@@ -1,0 +1,24 @@
+SQL Injection <----- input, URL
+
+http://localhost:3001/api/personal/telefono/1234567890 or '1'='1'
+'SELECT * FROM personal WHERE telefono=1234567890 or '1'='1' AND estatus = 1'
+
+http://localhost:3001/api/personal/telefono/1234567890';delete from personal-- or '1'='1'
+'SELECT * FROM personal WHERE telefono=1234567890' delete from personal-- or '1'='1' AND estatus = 1'
+
+RECOMENDACIONES API
+1.- No permitir multiples ejecuciones de consultas
+http://localhost:3001/api/personal/telefono/1234567890';delete from personal-- or '1'='1'
+'SELECT * FROM personal WHERE telefono=1234567890' delete from personal-- or '1'='1' AND estatus = 1'
+
+
+2.- No usar interpolacion de variables, usar el código que viene por defecto en la 
+documentación de la ejecución de las consultas.
+
+consulta = `SELECT * FROM personal WHERE telefono = '${telefono}' AND estatus = 1`;
+
+3.- Validar los inputs: Zon esta biem, pero mejorarlo cn refine y con RegEx
+RegEx = expresiones regulares -> formulas para validar entradas (a|b)+
+
+4.- permitir una lista blanca
+Valores que si son permitidos
