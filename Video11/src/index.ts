@@ -8,9 +8,11 @@ const app = express();
 
 //Configurar rutas para el acceso personal
 import personalRutas from './routes/personalRutas';
+import cors from 'cors';
 
 //todo lo que se regresa al usuario es tipo JSON
 app.use(express.json());
+app.use(cors());
 
 //puesto para escuchar la peticion del frontend
 const puerto = 3001;
