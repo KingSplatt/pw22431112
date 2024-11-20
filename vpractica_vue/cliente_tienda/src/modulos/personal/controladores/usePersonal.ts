@@ -1,5 +1,5 @@
 import { ref } from "vue"
-import type { Personal } from "../interfaces/personal-interface"
+import type { Personal, PersonalAgregar } from "../interfaces/personal-interface"
 import personalApi from "../api/personalAPI"
 
 export const usePersonal = () => {
@@ -11,8 +11,16 @@ export const usePersonal = () => {
         console.log(personal.value)
     }
 
-    return{
-        personal,
-        traePersonal
+    const agregarPersonal = async (personal: PersonalAgregar) => {
+        const respuesta = await personalApi.post('/', personal)
+        if (respuesta.data.affectedRows >= 1) {
+            console.log('Personal agregado')
+        }
+        return {
+            personal,
+            traePersonal,
+            agregarPersonal
+        }
+
     }
 }
