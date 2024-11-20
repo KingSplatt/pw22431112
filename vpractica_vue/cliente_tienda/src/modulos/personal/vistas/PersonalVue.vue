@@ -37,7 +37,7 @@
 
 <script setup lang="ts">
     import { onMounted } from 'vue'
-    import { usePersonal } from '../controladores/usePersonal.ts'
+    import { usePersonal } from '../controladores/usePersonal'
     const { traePersonal, personal } = usePersonal()
     //Cuando la pagina es visible y esta cargada
     onMounted(async () => {
