@@ -27,7 +27,7 @@ export const usePersonal = () => {
 
 
     const actualizarPersonal = async (personal: Personal) => {
-        const respuesta = await personalApi.put('/'+personal) 
+        const respuesta = await personalApi.put('/',personal) 
         if(respuesta.data.affectedRows >= 1) {
             mensaje.value = 1
         }
