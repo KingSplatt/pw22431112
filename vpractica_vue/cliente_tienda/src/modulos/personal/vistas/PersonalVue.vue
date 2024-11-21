@@ -13,7 +13,7 @@
             </RouterLink>
         </div>
     </section>
-    <table class="table table-stripped">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Clave</th>

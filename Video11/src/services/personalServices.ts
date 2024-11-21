@@ -1,6 +1,6 @@
 import mysql from 'mysql2/promise';
 import { Personal, PersonalNuevo } from '../typesPersonal';
-import { personalSchema, personalSchema2 } from '../schema/personal.schema';
+import { personalSchema } from '../schema/personal.schema';
 
 const conexion = mysql.createPool({
     host: '127.0.0.1',
@@ -22,7 +22,7 @@ export const obtienePersonal = async () => {
 export const encuentraPersonal = async (id: number) => {
     try {
         const identificador = { id: id };
-        const validacion = personalSchema2.safeParse(identificador);
+        const validacion = personalSchema.safeParse(identificador);
         if (!validacion.success) {
             return { error: validacion.error };
         }
@@ -36,7 +36,7 @@ export const encuentraPersonal = async (id: number) => {
 export const encuentraPersonalTelefono = async (telefono: string) => {
     try {
         const tel = { telefono: telefono };
-        const validacion = personalSchema2.safeParse(tel);
+        const validacion = personalSchema.safeParse(tel);
         if (!validacion.success) {
             return { error: validacion.error };
         }
@@ -69,7 +69,7 @@ export const agregarPersonal = async (nuevo: PersonalNuevo) => {
 }
 
 export const modificaPersonal = async (nuevo: Personal) => {
-    const validacion = personalSchema2.safeParse(nuevo);
+    const validacion = personalSchema.safeParse(nuevo);
     if (!validacion.success) {
         return { error: validacion.error };
     }
