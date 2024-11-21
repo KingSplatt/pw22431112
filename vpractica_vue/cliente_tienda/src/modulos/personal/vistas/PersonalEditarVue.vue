@@ -2,7 +2,7 @@
     <div class="container mt-5" v-if="personal[0]"> 
         <div class="card">
             <div class="card-header">
-                <h4>Agregar personal</h4>
+                <h4>Editar personal</h4>
             </div>
             <div v-if="mensaje == 1" class="alert alert-succes" role="alert">
                 Datos actualizados con éxito
@@ -18,7 +18,7 @@
                 </div>
                 <div class="mb-3">
                     Dirección
-                    <input type="text" class="form-control" v-model="personal[0].direccion"
+                    <input type="text" class="form-control" v-model="personal[0].direccion">
                 </div>
                 <div class="mb-3">
                     Telefono
@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { usePersonal } from '../controladores/usePersonal';
 const { traePersonalId,mensaje,personal,actualizarPersonal } = usePersonal();

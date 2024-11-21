@@ -11,7 +11,12 @@ export const usePersonal = () => {
         personal.value = respuesta.data
         console.log(personal.value)
     }
-
+    const traePersonalId = async (id: number) => {
+        const respuesta = await personalApi.get<Personal[]>('/'+id)
+        personal.value = respuesta.data
+        console.log(personal.value)
+    }
+    
     const agregarPersonal = async (personal: PersonalAgregar) => {
         const respuesta = await personalApi.post('/', personal)
         if(respuesta.data.affectedRows >= 1) {
@@ -20,11 +25,6 @@ export const usePersonal = () => {
     }
 
 
-    const traePersonalId = async (id: number) => {
-        const respuesta = await personalApi.get<Personal[]>('/'+id)
-        personal.value = respuesta.data
-        console.log(personal.value)
-    }
 
     const actualizarPersonal = async (personal: Personal) => {
         const respuesta = await personalApi.put('/'+personal) 

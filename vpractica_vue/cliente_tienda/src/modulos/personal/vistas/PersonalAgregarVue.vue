@@ -14,7 +14,7 @@
                 </div>
                 <div class="mb-3">
                     Dirección
-                    <input type="text" class="form-control" v-model="personal.direccion"
+                    <input type="text" class="form-control" v-model="personal.direccion">
                 </div>
                 <div class="mb-3">
                     Telefono
