@@ -36,10 +36,10 @@
                 <td class="centrado">
                     <div class="btn-group" role="group" aria-label="Basic outlined example">
                         <button type="button" class="btn btn-sm btn-outline-primary">
-                            <RouterLink class="nav-link item" :to ="{path: '/personal'+persona.id+'/editar'}"><i class="fa fa-pencil"></i></RouterLink>
+                            <RouterLink class="nav-link item" :to ="{path: '/personal/'+persona.id+'/editar'}"><i class="fa fa-pencil"></i></RouterLink>
                         </button>
                         <button type="button" class="btn btn-sm btn-outline-danger">
-                            <RouterLink class="nav-link item" :to ="{path: '/personal'+persona.id+'/borrar'}"><i class="fa fa-trash"></i></RouterLink>
+                            <RouterLink class="nav-link item" :to ="{path: '/personal/'+persona.id+'/borrar'}"><i class="fa fa-trash"></i></RouterLink>
                         </button>
                     </div>
                 </td>

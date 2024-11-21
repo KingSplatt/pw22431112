@@ -4,6 +4,9 @@
             <div class="card-header">
                 <h4>Agregar personal</h4>
             </div>
+            <div v-if="mensaje == 1" class="alert alert-succes" role="alert">
+                Datos agregados con éxito
+            </div>
             <div class="card-body">
                 <div class="mb-3">
                     Nombre
@@ -34,7 +37,8 @@ import { ref } from 'vue';
 import type { PersonalAgregar } from '../interfaces/personal-interface';
 import { usePersonal } from '../controladores/usePersonal';
 
-const { agregarPersonal } = usePersonal();
+const { agregarPersonal,mensaje } = usePersonal();
+
     let personal = ref<PersonalAgregar>({
         nombre: '',
         direccion: '',
