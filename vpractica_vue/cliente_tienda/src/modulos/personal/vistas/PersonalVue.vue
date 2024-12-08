@@ -2,7 +2,7 @@
     <section>
         <h3></h3>
         <h3>
-            Personal
+            <!-- Personal -->
         </h3>
         <div>
             <RouterLink :to="{path:'/personal/agregar'}">
@@ -11,9 +11,20 @@
                 </button>
 
             </RouterLink>
+            &nbsp;
+            <button @click.prevent="imprimirPersonalPDF" class="btn btn-sm btn-outline-primary" v-if="personal.length > 0">
+                Imprimir <i class="fa fa-print"></i>
+            </button>
+            <!-- Agregamos un voton nuevo -->
+             <button class="btn btn-sm btn-outline-primary"  v-if="personal.length > 0">
+                <download-excel :data="personal" type="xlsx" name="personal.xlsx">
+                    Exportar a Excel <i class="fa fa-file-excel-o"></i>
+                </download-excel>
+             </button>
         </div>
     </section>
-    <table class="table table-striped">
+    <table class="table table-striped" id="tablaPersonal">
+        <caption><h3>Personal</h3></caption>
         <thead>
             <tr>
                 <th>Clave</th>
@@ -49,6 +60,7 @@
 </template>
 
 <script setup lang="ts">
+    import html2PDF from 'jspdf-html2canvas'
     import { onMounted } from 'vue'
     import { usePersonal } from '../controladores/usePersonal'
     const { traePersonal, personal } = usePersonal()
@@ -56,6 +68,17 @@
     onMounted(async () => {
         await traePersonal()
     })
+
+    const imprimirPersonalPDF = async () => {
+        let pagina = document.getElementById('tablaPersonal')
+        await html2PDF(pagina, {
+            jsPDF: {
+                format: 'a4',
+            },
+            imageType: 'image/jpeg',
+            output: './reporte_personal.pdf'
+        });
+    }
 
     // load <--- carga, en memoria
     // mounted <--- cargada y se ve en la pantalla
@@ -70,5 +93,11 @@
     }
     .centrado{
         text-align: center;
+    }
+    caption{
+        caption-side: top;
+        text-align: center;
+        padding-bottom: 10px;
+        font-weight: bold;
     }
 </style>
